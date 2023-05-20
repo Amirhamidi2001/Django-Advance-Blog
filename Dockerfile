@@ -1,5 +1,5 @@
-# For more information, please refer to https://aka.ms/vscode-docker-python
-FROM python:3.8-slim
+# Use an official Python runtime as a parent image
+FROM python:3.9
 
 EXPOSE 8000
 
@@ -14,8 +14,9 @@ COPY requirements.txt .
 RUN python -m pip install --upgrade pip
 RUN python -m pip install -r requirements.txt
 
+# Copy the current directory contents into the container at /app
 WORKDIR /app
 COPY ./core /app
 
-# During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Start the Django app
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
