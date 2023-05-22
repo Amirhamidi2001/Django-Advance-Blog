@@ -1,0 +1,29 @@
+<h1>{{ object.title }}</h1>
+<p>{{ object.content }}</p>
+<p>Reporter: {{ object.category }}</p>
+<p>Published: {{ object.published_date|date }}</p>
+<!--
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-group form-inline">
+        <div class="form-group col-lg-6 col-md-12 name">
+            <input type="text" class="form-control" name="name" placeholder="Enter Name"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Name'">
+        </div>
+        <div class="form-group col-lg-6 col-md-12 email">
+            <input type="email" class="form-control" name="email" placeholder="Enter email address"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="subject" placeholder="Subject"
+            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'">
+    </div>
+    <div class="form-group">
+        <textarea class="form-control mb-10" rows="5" name="message" placeholder="Messege"
+            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'"
+            required=""></textarea>
+    </div>
+    <input type="submit" value="Send message">
+</form>
+-->

@@ -20,7 +20,7 @@ class Post(models.Model):
     """
 
     author = models.ForeignKey("accounts.Profile", on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='blog/',blank=True, null=True)
+    image = models.ImageField(upload_to="blog/",blank=True, null=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
     tags = TaggableManager()
@@ -34,7 +34,7 @@ class Post(models.Model):
     date = models.DateField(auto_now=True)
 
     class Meta:
-        ordering = ['-created_date']
+        ordering = ["-created_date"]
 
     def __str__(self):
         return self.title
@@ -55,7 +55,7 @@ class Comment(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-created_date']
+        ordering = ["-created_date"]
 
     def __str__(self):
         return self.name
