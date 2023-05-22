@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "accounts",
     "blog",
     "taggit",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # https://docs.djangoproject.com/en/4.2/topics/auth/customizing/
 
 AUTH_USER_MODEL = "accounts.User"
+
+# Django REST framework Setting the permission policy
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated',
+#     ]
+# }
