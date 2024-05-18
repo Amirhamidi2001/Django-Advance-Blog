@@ -1,6 +1,6 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
-from taggit.managers import TaggableManager
 
 
 class Category(models.Model):
@@ -23,7 +23,6 @@ class Post(models.Model):
     image = models.ImageField(upload_to="blog/",blank=True, null=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
-    tags = TaggableManager()
     category = models.ForeignKey("Category", on_delete=models.SET_NULL, null=True)
     counted_views = models.IntegerField(default=0)
     status = models.BooleanField(default=False)
@@ -38,6 +37,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_snippet(self):
+        return self.content[:79]
+
+    def get_absolute_url(self):
+        return reverse("blog:api-v3:post-detail", kwargs={"pk": self.pk})
+
 
 
 class Comment(models.Model):
